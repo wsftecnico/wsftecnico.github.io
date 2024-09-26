@@ -29,7 +29,7 @@ function gerarResposta(mensagem) {
     } else if (mensagemFormatada.includes("tudo bem") || mensagemFormatada.includes("como você está")) {
         return "Estou bem, obrigado por perguntar!";
     } else if (mensagemFormatada.includes("nome")) {
-        return "Meu nome é ChatBot!";
+        return "Meu nome é Washington";
     } else if (mensagemFormatada.includes("adeus") || mensagemFormatada.includes("tchau")) {
         return "Adeus! Até logo!";
     } else {
