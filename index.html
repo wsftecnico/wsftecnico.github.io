@@ -3,40 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Site em Construção</title>
+    <title>Menu Interativo</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
         }
-        .container {
-            text-align: center;
+        nav {
+            background-color: #333;
+            padding: 1em;
         }
-        h1 {
-            color: #333;
-            font-size: 3em;
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
         }
-        p {
-            color: #666;
-            font-size: 1.5em;
+        nav ul li {
+            margin-right: 15px;
         }
-        .icon {
-            font-size: 5em;
-            color: #ffcc00;
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #444;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="icon">🚧</div>
-        <h1>Site em Construção</h1>
-        <p>Estamos trabalhando para trazer novidades em breve!</p>
-    </div>
+
+<nav>
+    <ul>
+        <li><a href="/inicio">Início</a></li>
+        <li><a href="/chat">Chat</a></li>
+        <li><a href="/album">Álbum</a></li>
+        <li><a href="/curriculo">Currículo</a></li>
+        <li><a href="/portifolio">Portfólio</a></li>
+    </ul>
+</nav>
+
+<script>
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            alert(`Você clicou em: ${this.textContent}`);
+            window.location.href = this.getAttribute('href');
+        });
+    });
+</script>
+
 </body>
 </html>
