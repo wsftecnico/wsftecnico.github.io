@@ -3,34 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Interativo</title>
+    <title>Menu Interativo Responsivo</title>
     <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
         }
+
         nav {
-            background-color: #333;
+            background-color: #2f2f2f; /* Cinza escuro */
             padding: 1em;
         }
+
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
         }
+
         nav ul li {
-            margin-right: 15px;
+            margin: 10px;
         }
+
         nav ul li a {
             color: white;
             text-decoration: none;
-            padding: 8px 16px;
-            background-color: #444;
+            padding: 10px 20px;
+            background-color: #4d4d4d; /* Cinza médio */
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         nav ul li a:hover {
-            background-color: #555;
+            background-color: #6e6e6e; /* Cinza claro ao passar o mouse */
+            transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul li a {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        /* Estilo para o texto de boas-vindas */
+        .welcome-text {
+            max-width: 800px;
+            margin: 50px auto; /* Centraliza o texto horizontalmente */
+            text-align: justify;
+            font-size: 20px;
+            line-height: 1.6;
+            padding: 0 20px; /* Padding lateral para melhor visualização em telas menores */
+        }
+
+        .welcome-text h1 {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -38,13 +90,23 @@
 
 <nav>
     <ul>
-        <li><a href="/inicio">Início</a></li>
+        <li><a href="/index.html">Início</a></li>
         <li><a href="/chat">Chat</a></li>
-        <li><a href="/album">Álbum</a></li>
-        <li><a href="/curriculo">Currículo</a></li>
-        <li><a href="/portifolio">Portfólio</a></li>
+        <li><a href="/index.html">Álbum</a></li>
+        <li><a href="/curriculo.html">Currículo</a></li>
+        <li><a href="/index.html">Portfólio</a></li>
     </ul>
 </nav>
+
+<div class="welcome-text">
+    <h1>Bem-vindo ao Meu Site Profissional</h1>
+    <p>
+        Este site foi criado com o objetivo de apresentar de maneira organizada e acessível 
+        meu portfólio profissional, incluindo meu currículo, projetos em andamento, e outros trabalhos 
+        relevantes. Sinta-se à vontade para navegar pelas diferentes seções do site, onde você encontrará 
+        mais detalhes sobre minhas qualificações, experiências e realizações profissionais.
+    </p>
+</div>
 
 <script>
     document.querySelectorAll('nav ul li a').forEach(link => {
